@@ -1,4 +1,6 @@
-$.fn.oneTransitionEnd = function(property, callback) {
+(function ($) {
+
+  $.fn.oneTransitionEnd = function(property, callback) {
     var that = this;
     var innerCallback = function (event) {
         if (event.originalEvent.propertyName.substr(- property.length) === property) {
@@ -30,3 +32,6 @@ function whichTransitionEvent(){
         }
     }
 }
+
+})(jQuery);
+
